@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://schlecht-movers.ch";
 
@@ -33,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return allRoutes.map((route) => ({
     url: `${base}${route}`,
-    lastModified: new Date(),
+    lastModified: new Date("2026-02-18"),
     changeFrequency: "weekly" as const,
     priority: route === "/" ? 1 : 0.8,
   }));

@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
-    "predeploy": "npm run build && npm run export",
+    "export": "echo 'Static export is handled by next build with output: export'",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "eslint"

@@ -1,29 +1,21 @@
 "use client";
 
-import { useActionState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Send, CheckCircle } from "lucide-react";
 import { type Locale, getUi } from "@/content/site";
-import {
-  submitContactForm,
-  type ContactFormState,
-} from "@/app/actions/contact";
 
 interface ContactFormProps {
   locale: Locale;
   pageSource?: string;
 }
 
-const initialState: ContactFormState = { success: false };
-
 export function ContactForm({ locale, pageSource }: ContactFormProps) {
   const t = getUi(locale);
-  const [state, formAction, isPending] = useActionState(
-    submitContactForm,
-    initialState,
-  );
+  const [submitted, setSubmitted] = useState(false);
+  const [isPending, setIsPending] = useState(false);
 
-  if (state.success && state.message) {
+  if (submitted) {
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
@@ -36,41 +28,19 @@ export function ContactForm({ locale, pageSource }: ContactFormProps) {
     );
   }
 
-  const errors = state.errors || {};
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsPending(true);
+    // Simulate submission for static preview
+    setTimeout(() => {
+      setSubmitted(true);
+      setIsPending(false);
+    }, 800);
+  };
 
   return (
-    <form action={formAction} className="space-y-5" id="contact-form">
+    <form onSubmit={handleSubmit} className="space-y-5" id="contact-form">
       <input type="hidden" name="pageSource" value={pageSource || ""} />
-      {/* Honeypot – hidden from users */}
-      <div
-        className="absolute -z-10 opacity-0 h-0 overflow-hidden"
-        aria-hidden="true"
-      >
-        <label htmlFor="website">Website</label>
-        <input
-          type="text"
-          id="website"
-          name="website"
-          tabIndex={-1}
-          autoComplete="off"
-        />
-      </div>
-
-      {/* Error summary */}
-      {Object.keys(errors).length > 0 && (
-        <div className="p-4 rounded-2xl bg-danger-light border border-danger/20 flex items-start gap-3">
-          <AlertCircle className="w-5 h-5 text-danger shrink-0 mt-0.5" />
-          <div className="text-sm text-danger">
-            <p className="font-semibold mb-1">{t.formError}</p>
-            <ul className="list-disc list-inside space-y-0.5">
-              {Object.entries(errors).map(([field, messages]) =>
-                messages?.map((msg, i) => <li key={`${field}-${i}`}>{msg}</li>),
-              )}
-            </ul>
-          </div>
-        </div>
-      )}
-
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label
@@ -86,9 +56,6 @@ export function ContactForm({ locale, pageSource }: ContactFormProps) {
             required
             className="w-full px-4 py-3 rounded-xl border border-border bg-bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all duration-300"
           />
-          {errors.firstName && (
-            <p className="mt-1 text-xs text-danger">{errors.firstName[0]}</p>
-          )}
         </div>
 
         <div>
@@ -105,9 +72,6 @@ export function ContactForm({ locale, pageSource }: ContactFormProps) {
             required
             className="w-full px-4 py-3 rounded-xl border border-border bg-bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all duration-300"
           />
-          {errors.lastName && (
-            <p className="mt-1 text-xs text-danger">{errors.lastName[0]}</p>
-          )}
         </div>
       </div>
 
@@ -126,9 +90,6 @@ export function ContactForm({ locale, pageSource }: ContactFormProps) {
             required
             className="w-full px-4 py-3 rounded-xl border border-border bg-bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all duration-300"
           />
-          {errors.email && (
-            <p className="mt-1 text-xs text-danger">{errors.email[0]}</p>
-          )}
         </div>
 
         <div>
