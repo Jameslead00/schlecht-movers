@@ -39,8 +39,6 @@ export function Header({ locale, currentPath }: HeaderProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPath]);
 
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/schlecht-movers";
-
   return (
     <header
       className={clsx(
@@ -59,7 +57,7 @@ export function Header({ locale, currentPath }: HeaderProps) {
           >
             <div className="flex items-center gap-2.5">
               <img
-                src={`${basePath}/logo.png`}
+                src="/logo.png"
                 alt="Schlecht Movers"
                 width={40}
                 height={40}

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Phone, Mail, MapPin, Instagram, MessageCircle } from "lucide-react";
 import {
   company,
@@ -30,7 +29,7 @@ export function Footer({ locale }: FooterProps) {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-5">
-              <Image
+              <img
                 src="/logo.png"
                 alt="Schlecht Movers"
                 width={40}
