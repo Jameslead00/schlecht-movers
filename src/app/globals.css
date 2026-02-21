@@ -52,8 +52,17 @@ html {
 
 body {
   background-color: var(--color-background);
+  background-image:
+    radial-gradient(800px 400px at 10% -10%, rgba(181, 167, 110, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 90% 0%, rgba(138, 122, 61, 0.12), transparent 62%),
+    linear-gradient(180deg, #fefcf8 0%, #f7f2e9 45%, #fefcf8 100%);
+  background-attachment: fixed;
   color: var(--color-foreground);
   line-height: 1.7;
+}
+
+.font-display {
+  font-family: var(--font-display);
 }
 
 ::selection {

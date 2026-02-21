@@ -16,12 +16,25 @@ export default function TransportPage() {
   const accordionItems = page.sections
     .filter((s) => s.heading)
     .map((s) => ({ title: s.heading!, content: s.body }));
+  const introSections = page.sections.filter((s) => !s.heading);
 
   return (
     <PageLayout locale="de" currentPath="/de/umzug/transport">
       <PageHero title={page.title} subtitle={page.subtitle} />
 
-      <Section>
+      {introSections.length > 0 && (
+        <Section>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {introSections.map((section, i) => (
+              <p key={i} className="text-lg text-text-secondary leading-relaxed">
+                {section.body}
+              </p>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      <Section bgAlt={introSections.length > 0}>
         <div className="max-w-3xl mx-auto">
           <Accordion items={accordionItems} />
           <div className="mt-10 flex flex-col sm:flex-row gap-4">

@@ -13,7 +13,7 @@ import {
 import { pagesEn, getRoute, getUi } from "@/content/site";
 
 export const metadata = {
-  title: "Schlecht Movers – Your Competent Relocation Partner",
+  title: "Schlecht & Co GmbH – Your Competent Relocation Partner",
 };
 
 export default function HomeEnPage() {
@@ -68,7 +68,7 @@ export default function HomeEnPage() {
 
       <Section bgAlt>
         <SectionHeader
-          title="Why Schlecht Movers?"
+          title="Why Schlecht & Co GmbH?"
           subtitle="Trust, quality and personal care — that is what sets us apart."
           tag="Your advantages"
         />

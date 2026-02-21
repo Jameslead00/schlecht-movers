@@ -64,7 +64,7 @@ export default function HomePage() {
 
       <Section bgAlt>
         <SectionHeader
-          title="Warum Schlecht Movers?"
+          title="Warum Schlecht & Co GmbH?"
           subtitle="Vertrauen, Qualität und persönliche Betreuung — das zeichnet uns aus."
           tag="Ihre Vorteile"
         />

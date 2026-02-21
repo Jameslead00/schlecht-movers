@@ -1,6 +1,6 @@
-# Schlecht Movers – Website
+# Schlecht & Co GmbH – Website
 
-Modern, bilingual (DE/EN) website for **Schlecht und Co. GmbH** – professional moving, clearance, and USM-Haller services in Reinach, Basel-Landschaft, Switzerland.
+Modern, bilingual (DE/EN) website for **Schlecht & Co GmbH** – professional moving, clearance, and USM-Haller services in Reinach, Basel-Landschaft, Switzerland.
 
 Built with **Next.js 16** (App Router), **React 19**, **TypeScript**, **Tailwind CSS 4**, and **Framer Motion**.
 

@@ -33,9 +33,7 @@ export function LanguageSwitcher({
       href={targetPath}
       className={clsx(
         "inline-flex items-center gap-1.5 px-2.5 py-1.5 text-sm font-medium rounded-lg transition-all duration-300",
-        scrolled
-          ? "text-text-secondary hover:text-brand hover:bg-bg-alt"
-          : "text-white/60 hover:text-white hover:bg-white/5",
+        "text-text-secondary hover:text-brand hover:bg-bg-alt",
       )}
       aria-label={`Switch to ${targetLocale === "de" ? "German" : "English"}`}
     >

@@ -43,9 +43,8 @@ export function Header({ locale, currentPath }: HeaderProps) {
     <header
       className={clsx(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.05)] border-b border-border/50"
-          : "bg-transparent",
+        "bg-white/90 backdrop-blur-xl border-b border-border/50",
+        scrolled && "shadow-[0_1px_3px_rgba(0,0,0,0.05)]",
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -58,7 +57,7 @@ export function Header({ locale, currentPath }: HeaderProps) {
             <div className="flex items-center gap-2.5">
               <img
                 src="/logo.png"
-                alt="Schlecht Movers"
+                alt="Schlecht & Co GmbH"
                 width={40}
                 height={40}
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg shadow-sm group-hover:shadow-md transition-shadow duration-300"
@@ -67,18 +66,18 @@ export function Header({ locale, currentPath }: HeaderProps) {
                 <span
                   className={clsx(
                     "font-bold text-base sm:text-lg tracking-tight transition-colors duration-500",
-                    scrolled ? "text-foreground" : "text-white",
+                    "text-foreground",
                   )}
                 >
-                  Schlecht
+                  Schlecht & Co
                 </span>
                 <span
                   className={clsx(
                     "block text-[10px] sm:text-xs uppercase tracking-[0.2em] transition-colors duration-500",
-                    scrolled ? "text-text-muted" : "text-white/50",
+                    "text-text-muted",
                   )}
                 >
-                  Movers
+                  GmbH
                 </span>
               </div>
             </div>
@@ -124,9 +123,7 @@ export function Header({ locale, currentPath }: HeaderProps) {
               onClick={() => setMobileOpen(!mobileOpen)}
               className={clsx(
                 "p-2 rounded-lg transition-colors",
-                scrolled
-                  ? "hover:bg-bg-alt text-foreground"
-                  : "hover:bg-white/10 text-white",
+                "hover:bg-bg-alt text-foreground",
               )}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
@@ -213,10 +210,10 @@ function DesktopNavItem({
           isActive
             ? scrolled
               ? "text-brand bg-brand-subtle"
-              : "text-white bg-white/10"
+              : "text-brand bg-brand-subtle"
             : scrolled
               ? "text-text-secondary hover:text-brand hover:bg-bg-alt"
-              : "text-white/70 hover:text-white hover:bg-white/5",
+              : "text-text-secondary hover:text-brand hover:bg-bg-alt",
         )}
       >
         {label}
@@ -234,10 +231,10 @@ function DesktopNavItem({
           isActive
             ? scrolled
               ? "text-brand bg-brand-subtle"
-              : "text-white bg-white/10"
+              : "text-brand bg-brand-subtle"
             : scrolled
               ? "text-text-secondary hover:text-brand hover:bg-bg-alt"
-              : "text-white/70 hover:text-white hover:bg-white/5",
+              : "text-text-secondary hover:text-brand hover:bg-bg-alt",
         )}
         aria-expanded={open}
       >

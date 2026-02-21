@@ -27,27 +27,27 @@ export function Hero({
   const t = getUi(locale);
 
   return (
-    <section className="relative overflow-hidden bg-accent min-h-[70vh] sm:min-h-[80vh] flex items-center">
-      {/* Decorative gold accent shapes */}
+    <section className="relative overflow-hidden bg-transparent min-h-[70vh] sm:min-h-[80vh] flex items-center">
+      {/* Decorative gradient shapes */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand/8 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-brand/5 blur-3xl rounded-full" />
+        <div className="absolute -top-28 -right-28 w-[520px] h-[520px] rounded-full bg-brand/15 blur-3xl" />
+        <div className="absolute -bottom-16 -left-12 w-[680px] h-[420px] bg-brand/10 blur-3xl rounded-full" />
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border pointer-events-none"
-          style={{ borderColor: "rgba(107,93,39,0.04)" }}
+          style={{ borderColor: "rgba(107,93,39,0.08)" }}
         />
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border pointer-events-none"
-          style={{ borderColor: "rgba(107,93,39,0.06)" }}
+          style={{ borderColor: "rgba(107,93,39,0.12)" }}
         />
       </div>
 
       {/* Subtle diagonal lines pattern */}
       <div
-        className="absolute inset-0 opacity-[0.015]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 40px)",
+            "repeating-linear-gradient(45deg, rgba(107,93,39,0.2) 0px, rgba(107,93,39,0.2) 1px, transparent 1px, transparent 42px)",
         }}
       />
 
@@ -60,8 +60,8 @@ export function Hero({
               transition={{ delay: 0.1, duration: 0.6 }}
               className="mb-6"
             >
-              <span className="inline-flex items-center gap-2 text-brand-muted text-sm font-semibold tracking-widest uppercase">
-                <span className="w-8 h-px bg-brand-muted" />
+              <span className="inline-flex items-center gap-2 text-brand text-sm font-semibold tracking-widest uppercase">
+                <span className="w-8 h-px bg-brand" />
                 {subtitle}
               </span>
             </motion.div>
@@ -71,8 +71,8 @@ export function Hero({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-brand relative z-20"
-            style={{ color: "var(--color-brand-light)" }}
+            className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-foreground relative z-20"
+            style={{ color: "var(--color-brand)" }}
           >
             {title}
           </motion.h1>
@@ -87,7 +87,7 @@ export function Hero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="mt-6 text-lg sm:text-xl text-white/70 leading-relaxed max-w-2xl"
+              className="mt-6 text-lg sm:text-xl text-text-secondary leading-relaxed max-w-2xl"
             >
               {description}
             </motion.p>
@@ -112,7 +112,7 @@ export function Hero({
             {secondaryCta && (
               <Link
                 href={secondaryCta.href}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-white/15 text-white/80 font-medium rounded-xl hover:bg-white/5 hover:border-white/25 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-brand/30 text-foreground font-medium rounded-xl hover:bg-brand-subtle hover:border-brand/50 transition-all duration-300"
               >
                 {secondaryCta.label}
               </Link>
@@ -135,18 +135,18 @@ export function PageHero({
   subtitle?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-accent pt-32 sm:pt-36 pb-20 sm:pb-24">
+    <section className="relative overflow-hidden bg-transparent pt-32 sm:pt-36 pb-20 sm:pb-24">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
-        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-brand/8 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[300px] bg-brand/5 blur-3xl rounded-full" />
+        <div className="absolute -top-24 -right-20 w-96 h-96 rounded-full bg-brand/12 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[440px] h-[320px] bg-brand/10 blur-3xl rounded-full" />
       </div>
 
       <div
-        className="absolute inset-0 opacity-[0.015]"
+        className="absolute inset-0 opacity-[0.035]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 40px)",
+            "repeating-linear-gradient(45deg, rgba(107,93,39,0.2) 0px, rgba(107,93,39,0.2) 1px, transparent 1px, transparent 42px)",
         }}
       />
 
@@ -157,8 +157,8 @@ export function PageHero({
           transition={{ duration: 0.6 }}
         >
           <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand relative z-20"
-            style={{ color: "var(--color-brand-light)" }}
+            className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground relative z-20"
+            style={{ color: "var(--color-brand)" }}
           >
             {title}
           </h1>
@@ -169,7 +169,9 @@ export function PageHero({
           />
 
           {subtitle && (
-            <p className="mt-4 text-lg text-white/60 max-w-2xl">{subtitle}</p>
+            <p className="mt-4 text-lg text-text-secondary max-w-2xl">
+              {subtitle}
+            </p>
           )}
         </motion.div>
       </div>

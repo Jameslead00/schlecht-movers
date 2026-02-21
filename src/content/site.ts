@@ -1,4 +1,4 @@
-// ─── Typed content source for Schlecht Movers ─────────────────────────
+// ─── Typed content source for Schlecht & Co GmbH ─────────────────────
 // All page content is defined here. Update this single file to change site text.
 // Content was originally extracted from https://schlecht-movers.ch/
 
@@ -8,8 +8,8 @@ export const LOCALES: Locale[] = ["de", "en"];
 
 // ─── Company info ──────────────────────────────────────────────────────
 export const company = {
-  name: "Schlecht Movers",
-  legalName: "Schlecht und Co. GmbH",
+  name: "Schlecht & Co GmbH",
+  legalName: "Schlecht & Co GmbH",
   address: "Bruggstrasse 7",
   city: "4153 Reinach BL",
   fullAddress: "Bruggstrasse 7, 4153 Reinach BL",
@@ -58,7 +58,6 @@ export interface NavItem {
 
 export const navigation: NavItem[] = [
   { key: "umzug" },
-  { key: "transport" },
   { key: "firmenumzug" },
   { key: "raeumung" },
   { key: "usm" },
@@ -127,7 +126,7 @@ export const pagesDe: Pages = {
     title: "Ihr kompetenter Umzugspartner",
     subtitle: "Reinach · Basel-Landschaft · Schweiz",
     heroText:
-      "Willkommen bei der Firma Schlecht und Co. GmbH. Wir sind ein junges Unternehmen mit Sitz in Reinach in Baselland. Wir kümmern uns um Umzüge wie auch Räumungen aller Art. Wir begleiten Sie nicht nur in Basel, sondern auch in Solothurn, dem Aargau und weit darüber hinaus.",
+      "Willkommen bei der Firma Schlecht & Co GmbH. Wir sind ein junges Unternehmen mit Sitz in Reinach in Baselland. Wir kümmern uns um Umzüge wie auch Räumungen aller Art. Wir begleiten Sie nicht nur in Basel, sondern auch in Solothurn, dem Aargau und weit darüber hinaus.",
     sections: [
       {
         heading: "Privatumzug",
@@ -152,6 +151,9 @@ export const pagesDe: Pages = {
     subtitle: "Privatumzüge zum Pauschalpreis",
     sections: [
       {
+        body: "Ein Privatumzug braucht klare Planung und ein Team, das mitdenkt. Wir koordinieren Ablauf, Schutz und Timing, damit Sie sich entspannt auf Ihr neues Zuhause freuen können.",
+      },
+      {
         heading: "Privatumzüge zum Pauschalpreis",
         body: "Wir bieten fachgerechte Umzüge für Privatkunden von der sorgfältigen Planung bis zur sicheren Durchführung. Mit Erfahrung, Engagement und einem eingespielten Team sorgen wir dafür, dass Ihr Umzug effizient, termingerecht und ohne Stress abläuft. Ihre Möbel und persönlichen Gegenstände sind bei uns in besten Händen. Wir erstellen Ihren Auftrag sehr gerne mit einem Kostendach oder einer Pauschalsumme.",
       },
@@ -163,6 +165,14 @@ export const pagesDe: Pages = {
         heading: "Kleinere Umzüge",
         body: "Von einem WG-Zimmer oder der erste Auszug von Zuhause bekommen bei uns die selbe Aufmerksamkeit wie ein Hausumzug. Wir begleiten Sie nicht als \"fremde\" die Ihre Möbel mitnehmen, sondern schaffen ein vertrautes und freundliches Ambiente. Wir kennen keine Grenzen, wir führen auch Übersiedlungen in unsere Nachbarländer durch. Entsprechend wickeln wir auch die Dokumentation am Zoll auf Wunsch für Sie ab.",
       },
+      {
+        heading: "Möbeltransport",
+        body: "Nicht nur grosse Umzüge, wir kümmern uns auch um kleine Transporte! Unsere Firma steht nicht nur für professionelle Umzüge, sondern auch für zuverlässige Kleintransporte aller Art. Egal, ob Sie nur ein einzelnes Möbelstück, ein paar Kartons oder eine kleinere Lieferung transportieren möchten, wir sind flexibel und sorgen dafür, dass Alles schnell, sicher und termingerecht ankommt. Auch wenn es \"nur\" ein kleiner Auftrag ist, behandeln wir ihn mit derselben Sorgfalt und Professionalität wie einen grossen Umzug. Unser Team unterstützt Sie gerne bei Wohnungswechseln, Abholungen, Möbeltransporten, Entsorgungen oder kurzfristigen Lieferfahrten.",
+      },
+      {
+        heading: "Spezialtransport",
+        body: "Manche Gegenstände erfordern besondere Aufmerksamkeit, sei es aufgrund ihres Wertes, ihrer Empfindlichkeit oder ihrer Einzigartigkeit. Wir sind Ihr verlässlicher Partner für Spezialtransporte von Kunstwerken, Gemälden, Designmöbeln, USM-Systemen und empfindlichen Objekten aller Art. Mit unserer Erfahrung und dem richtigen Equipment gewährleisten wir, dass jedes Stück fachgerecht verpackt, sicher transportiert und sorgfältig platziert wird. Unsere geschulten Mitarbeitenden wissen genau, worauf es beim Umgang mit sensiblen Objekten ankommt, von der Vorbereitung über den Transport bis hin zur Montage vor Ort.",
+      },
     ],
     hasForm: true,
   },
@@ -170,6 +180,9 @@ export const pagesDe: Pages = {
     title: "Transporte aller Art",
     subtitle: "Zuverlässige Transporte — vom Einzelstück bis zum Spezialgut",
     sections: [
+      {
+        body: "Ob Einzelstück oder Komplettladung: Wir übernehmen Transporte flexibel, schnell und mit der gleichen Sorgfalt wie bei einem Umzug.",
+      },
       {
         heading: "Möbeltransport",
         body: "Nicht nur grosse Umzüge, wir kümmern uns auch um kleine Transporte! Unsere Firma steht nicht nur für professionelle Umzüge, sondern auch für zuverlässige Kleintransporte aller Art. Egal, ob Sie nur ein einzelnes Möbelstück, ein paar Kartons oder eine kleinere Lieferung transportieren möchten, wir sind flexibel und sorgen dafür, dass Alles schnell, sicher und termingerecht ankommt. Auch wenn es \"nur\" ein kleiner Auftrag ist, behandeln wir ihn mit derselben Sorgfalt und Professionalität wie einen grossen Umzug. Unser Team unterstützt Sie gerne bei Wohnungswechseln, Abholungen, Möbeltransporten, Entsorgungen oder kurzfristigen Lieferfahrten.",
@@ -183,6 +196,9 @@ export const pagesDe: Pages = {
   firmenumzug: {
     title: "Firmenumzug",
     sections: [
+      {
+        body: "Wir organisieren Ihren Firmenumzug strukturiert, terminsicher und mit klarer Verantwortlichkeit, damit der Betrieb schnell wieder läuft.",
+      },
       {
         heading: "Besichtigung",
         body: "Vor der Planung des Umzuges, empfehlen wir eine Besichtigung vor Ort um das genaue Volumen und die Gegebenheiten kennenzulernen. Für uns sind alle Details wichtig die den Umzug als ganzes abrunden. Sollte eine Besichtigung nicht möglich sein, können Sie uns auch eine Möbelliste zusenden.",
@@ -221,18 +237,18 @@ export const pagesDe: Pages = {
   },
   usm: {
     title: "USM-Haller",
-    subtitle: "Professionelle USM-Haller Montagen in der Nordwestschweiz",
+    subtitle: "USM-Haller Umbau und Neubau in der Nordwestschweiz",
     sections: [
       {
-        body: "Ob USM-Haller Montage in Basel-Landschaft, Demontage bei einem Umzug oder Umbau bestehender Systeme – wir sorgen für eine präzise, saubere und materialsichere Ausführung. Unsere Expertise umfasst USM-Haller Regale, Sideboards, Büromöbel und komplette Arbeitsplatzlösungen, die wir optimal an neue Raumkonzepte, Büroflächen oder Wohnräume anpassen.",
+        body: "Ob Umbau bestehender USM-Haller Anlagen oder Neubau kompletter Systeme – wir planen die Umsetzung, montieren präzise und passen Module an neue Raumkonzepte an. Unsere Expertise umfasst USM-Haller Regale, Sideboards, Büromöbel und komplette Arbeitsplatzlösungen.",
       },
       {
-        heading: "Regional verwurzelt",
-        body: "Gerade in Basel-Landschaft, ob in Liestal, Pratteln, Muttenz oder Umgebung, unterstützen wir unsere Kundinnen und Kunden bei Standortwechseln, Büroumbauten und Erweiterungen bestehender USM-Haller Systeme. Durch unsere spezialisierte Arbeitsweise bleiben Ihre hochwertigen USM-Haller Möbel dauerhaft funktional und wertbeständig.",
+        heading: "Umbau & Erweiterung",
+        body: "Wir konfigurieren USM-Systeme neu, erweitern Regale, Sideboards und Arbeitsplätze und sorgen für saubere Anpassungen bei Umzügen oder Umnutzungen. Durch unsere spezialisierte Arbeitsweise bleiben Ihre hochwertigen USM-Haller Möbel dauerhaft funktional und wertbeständig.",
       },
       {
-        heading: "Für Privat & Geschäft",
-        body: "Unser Service für USM-Haller Montage, Demontage und Umbau in Basel-Landschaft richtet sich an Unternehmen, Büros, Architekten, Innenausstatter sowie Privatpersonen. Gerne beraten wir Sie persönlich und erstellen ein unverbindliches Angebot für Ihr Projekt in der Region Basel-Landschaft.",
+        heading: "Neubau & Einrichtung",
+        body: "Von der ersten Idee bis zur fertigen Einrichtung setzen wir neue USM-Haller Lösungen um und schaffen funktionale Arbeits- und Wohnbereiche. Gerne beraten wir Sie persönlich und erstellen ein unverbindliches Angebot für Ihr Projekt in der Region Basel-Landschaft.",
       },
     ],
     hasForm: true,
@@ -261,11 +277,11 @@ export const pagesDe: Pages = {
     sections: [
       {
         heading: "Jill Schlecht, Gründer",
-        body: "Ich bin Gründer, CEO und Gesellschafter der Firma Schlecht und Co GmbH. 2024 habe ich mein eigenes Unternehmen gegründet und es bereits 2025 erfolgreich in eine GmbH umgewandelt. Ursprünglich habe ich den Beruf des Schreiners erlernt, bevor ich meine Leidenschaft für den Bereich Umzüge entdeckt habe. Durch meinen handwerklichen Hintergrund weiss ich, worauf es bei Sorgfalt, Qualität und Präzision ankommt — Eigenschaften, die ich in jedes Projekt einfliessen lasse. Heute stehe ich mit meinem Team für zuverlässige, kundenorientierte Umzugslösungen, die individuell auf die Bedürfnisse unserer Kundinnen und Kunden zugeschnitten sind. Mein Ziel ist es, jedem Umzug nicht nur reibungslos, sondern auch stressfrei und professionell zu gestalten — damit unsere Kundschaft von Anfang an ein gutes Gefühl hat.",
+        body: "Ich bin Gründer, CEO und Gesellschafter der Firma Schlecht & Co GmbH. 2024 habe ich mein eigenes Unternehmen gegründet und es bereits 2025 erfolgreich in eine GmbH umgewandelt. Ursprünglich habe ich den Beruf des Schreiners erlernt, bevor ich meine Leidenschaft für den Bereich Umzüge entdeckt habe. Durch meinen handwerklichen Hintergrund weiss ich, worauf es bei Sorgfalt, Qualität und Präzision ankommt — Eigenschaften, die ich in jedes Projekt einfliessen lasse. Heute stehe ich mit meinem Team für zuverlässige, kundenorientierte Umzugslösungen, die individuell auf die Bedürfnisse unserer Kundinnen und Kunden zugeschnitten sind. Mein Ziel ist es, jedem Umzug nicht nur reibungslos, sondern auch stressfrei und professionell zu gestalten — damit unsere Kundschaft von Anfang an ein gutes Gefühl hat.",
       },
       {
         heading: "Felix Pfeifer, Umzugsleiter",
-        body: "Felix Pfeifer ist Umzugsleiter beim Unternehmen Schlecht und Co GmbH. Als gelernter Schreiner mit jahrelanger Erfahrung im Umzugsbereich verbindet er handwerkliche Präzision mit organisatorischem Geschick. Er betreut unsere Kundinnen und Kunden persönlich — unabhängig davon, ob es sich um einen kleinen Privatumzug oder ein grosses Projekt handelt. Mit seiner offenen Art und seinem hohen Qualitätsanspruch ist er während des gesamten Prozesses ein verlässlicher Ansprechpartner. Sein Ziel ist es, jedem Umzug die nötige Struktur und Ruhe zu geben, damit sich unsere Kundschaft jederzeit gut aufgehoben fühlt.",
+        body: "Felix Pfeifer ist Umzugsleiter beim Unternehmen Schlecht & Co GmbH. Als gelernter Schreiner mit jahrelanger Erfahrung im Umzugsbereich verbindet er handwerkliche Präzision mit organisatorischem Geschick. Er betreut unsere Kundinnen und Kunden persönlich — unabhängig davon, ob es sich um einen kleinen Privatumzug oder ein grosses Projekt handelt. Mit seiner offenen Art und seinem hohen Qualitätsanspruch ist er während des gesamten Prozesses ein verlässlicher Ansprechpartner. Sein Ziel ist es, jedem Umzug die nötige Struktur und Ruhe zu geben, damit sich unsere Kundschaft jederzeit gut aufgehoben fühlt.",
       },
     ],
   },
@@ -286,7 +302,7 @@ export const pagesEn: Pages = {
     title: "Your competent relocation partner",
     subtitle: "Reinach · Basel-Landschaft · Switzerland",
     heroText:
-      "Welcome to Schlecht & Co. GmbH. We are a young, dynamic company based in Reinach, Basel-Landschaft. We specialise in professional relocation services as well as clearances and removals of all kinds. Our services are not limited to the Basel region; we also operate in Solothurn, Aargau and far beyond.",
+      "Welcome to Schlecht & Co GmbH. We are a young, dynamic company based in Reinach, Basel-Landschaft. We specialise in professional relocation services as well as clearances and removals of all kinds. Our services are not limited to the Basel region; we also operate in Solothurn, Aargau and far beyond.",
     sections: [
       {
         heading: "Private Relocation",
@@ -311,6 +327,9 @@ export const pagesEn: Pages = {
     subtitle: "Residential moves",
     sections: [
       {
+        body: "A private relocation needs clear planning and a team that stays ahead of every detail. We coordinate timing, protection and logistics so you can settle into your new home with confidence.",
+      },
+      {
         heading: "Residential moves",
         body: "We provide professional relocation services for private clients, from careful planning through to safe and reliable execution. With experience, dedication and a well-coordinated team, we ensure that your move is carried out efficiently, on schedule and without stress. Your furniture and personal belongings are in the best possible hands with us.",
       },
@@ -322,6 +341,14 @@ export const pagesEn: Pages = {
         heading: "Small-Scale Moves",
         body: "Whether it is a move from a shared apartment room or a first move out of your family home, we give it the same level of care and attention as a full house relocation. We do not see ourselves as \"strangers\" simply transporting your furniture, but as a reliable partner who creates a familiar, friendly and reassuring atmosphere throughout the entire move. We know no boundaries and also carry out relocations to our neighbouring countries. Upon request, we are happy to handle the required customs documentation for you, ensuring a smooth and uncomplicated process.",
       },
+      {
+        heading: "Furniture transport",
+        body: "Not only large relocations, we also take care of small transports. Our company stands not only for professional moving services, but also for reliable small-scale transport solutions of all kinds. Whether you need to move a single piece of furniture, a few boxes or a small delivery, we are flexible and ensure that everything arrives quickly, safely and on time. Even if it is \"only\" a small assignment, we treat it with the same care and professionalism as a large relocation. Our team is happy to assist you with apartment moves, collections, furniture transport, disposals or short-notice delivery services.",
+      },
+      {
+        heading: "Special transport",
+        body: "Some items require special attention, whether due to their value, their sensitivity or their uniqueness. We are your reliable partner for specialised transport services involving artworks, paintings, designer furniture, USM systems and delicate objects of all kinds. With our experience and the appropriate equipment, we ensure that every item is professionally packed, transported safely and carefully positioned. Our trained staff know exactly what matters when handling sensitive objects, from preparation and transport through to on-site installation.",
+      },
     ],
     hasForm: true,
   },
@@ -329,6 +356,9 @@ export const pagesEn: Pages = {
     title: "Transport services of all kinds",
     subtitle: "Reliable transport — from single items to specialist goods",
     sections: [
+      {
+        body: "Whether it is a single item or a full load, we handle transport with speed, care and the same attention you expect from a relocation team.",
+      },
       {
         heading: "Furniture transport",
         body: "Not only large relocations, we also take care of small transports. Our company stands not only for professional moving services, but also for reliable small-scale transport solutions of all kinds. Whether you need to move a single piece of furniture, a few boxes or a small delivery, we are flexible and ensure that everything arrives quickly, safely and on time. Even if it is \"only\" a small assignment, we treat it with the same care and professionalism as a large relocation. Our team is happy to assist you with apartment moves, collections, furniture transport, disposals or short-notice delivery services.",
@@ -342,6 +372,9 @@ export const pagesEn: Pages = {
   firmenumzug: {
     title: "Corporate Relocation",
     sections: [
+      {
+        body: "We manage corporate relocations with clear structure, reliable timing and defined responsibilities, so your operations resume quickly.",
+      },
       {
         heading: "Inspection",
         body: "Before planning the relocation, we recommend an on-site inspection in order to assess the exact volume and local conditions. For us, every detail matters in ensuring a smooth and well-coordinated move. If an on-site inspection is not possible, you are also welcome to send us a furniture list as an alternative.",
@@ -380,18 +413,18 @@ export const pagesEn: Pages = {
   },
   usm: {
     title: "USM-Haller",
-    subtitle: "Professional USM-Haller assembly services in Northwestern Switzerland",
+    subtitle: "USM-Haller reconfiguration and new builds in Northwestern Switzerland",
     sections: [
       {
-        body: "Whether it is USM Haller assembly in Basel-Landschaft, disassembly during a relocation, or the modification of existing systems, we ensure precise, clean and material-safe execution. Our expertise covers USM Haller shelving units, sideboards, office furniture and complete workplace solutions, which we adapt optimally to new room concepts, office spaces or residential environments.",
+        body: "Whether it is a reconfiguration of existing USM-Haller systems or a new build of complete setups, we plan the execution, assemble with precision and adapt modules to new room concepts. Our expertise covers USM-Haller shelving units, sideboards, office furniture and complete workplace solutions.",
       },
       {
-        heading: "Regionally rooted",
-        body: "Especially in Basel-Landschaft, whether in Liestal, Pratteln, Muttenz or the surrounding areas, we support our clients with relocations, office refurbishments and the expansion of existing USM Haller systems. Through our specialised approach, your high-quality USM Haller furniture remains permanently functional and retains its value over the long term.",
+        heading: "Reconfiguration & Expansion",
+        body: "We reconfigure USM systems, expand shelving, sideboards and workstations and deliver clean adjustments during relocations or space changes. Through our specialised approach, your high-quality USM-Haller furniture remains permanently functional and retains its value over the long term.",
       },
       {
-        heading: "For private & business",
-        body: "Our USM Haller assembly, disassembly and modification services in Basel-Landschaft are aimed at companies, offices, architects, interior designers and private individuals. We are happy to advise you personally and provide a non-binding quotation for your project in the Basel-Landschaft region.",
+        heading: "New Builds & Fit-Outs",
+        body: "From the initial concept to the finished fit-out, we deliver new USM-Haller solutions that create functional work and living spaces. We are happy to advise you personally and provide a non-binding quotation for your project in the Basel-Landschaft region.",
       },
     ],
     hasForm: true,
@@ -420,11 +453,11 @@ export const pagesEn: Pages = {
     sections: [
       {
         heading: "Jill Schlecht, Founder",
-        body: "I am the founder, CEO and shareholder of Schlecht und Co GmbH. In 2024, I founded my own company and successfully converted it into a GmbH in 2025. I originally trained as a carpenter before discovering my passion for the moving industry. Thanks to my craftsmanship background, I know what matters when it comes to care, quality and precision — qualities I bring to every project. Today, together with my team, I stand for reliable, customer-focused moving solutions tailored to the individual needs of our clients. My goal is to make every move not only seamless but also stress-free and professional — so our customers feel confident from the very start.",
+        body: "I am the founder, CEO and shareholder of Schlecht & Co GmbH. In 2024, I founded my own company and successfully converted it into a GmbH in 2025. I originally trained as a carpenter before discovering my passion for the moving industry. Thanks to my craftsmanship background, I know what matters when it comes to care, quality and precision — qualities I bring to every project. Today, together with my team, I stand for reliable, customer-focused moving solutions tailored to the individual needs of our clients. My goal is to make every move not only seamless but also stress-free and professional — so our customers feel confident from the very start.",
       },
       {
         heading: "Felix Pfeifer, Moving Team Leader",
-        body: "Felix Pfeifer is the moving team leader at Schlecht und Co GmbH. As a trained carpenter with years of experience in the moving industry, he combines craftsmanship precision with organisational skill. He personally looks after our clients — whether it is a small private move or a large-scale project. With his approachable manner and high standards of quality, he is a reliable point of contact throughout the entire process. His goal is to give every move the structure and calm it needs, so our clients always feel they are in good hands.",
+        body: "Felix Pfeifer is the moving team leader at Schlecht & Co GmbH. As a trained carpenter with years of experience in the moving industry, he combines craftsmanship precision with organisational skill. He personally looks after our clients — whether it is a small private move or a large-scale project. With his approachable manner and high standards of quality, he is a reliable point of contact throughout the entire process. His goal is to give every move the structure and calm it needs, so our clients always feel they are in good hands.",
       },
     ],
   },

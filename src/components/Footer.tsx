@@ -31,17 +31,17 @@ export function Footer({ locale }: FooterProps) {
             <div className="flex items-center gap-2.5 mb-5">
               <img
                 src="/logo.png"
-                alt="Schlecht Movers"
+                alt="Schlecht & Co GmbH"
                 width={40}
                 height={40}
                 className="w-10 h-10 rounded-lg shadow-sm"
               />
               <div className="leading-tight">
                 <span className="font-bold text-white text-lg tracking-tight">
-                  Schlecht
+                  Schlecht & Co
                 </span>
                 <span className="block text-xs text-white/40 uppercase tracking-[0.2em]">
-                  Movers
+                  GmbH
                 </span>
               </div>
             </div>
