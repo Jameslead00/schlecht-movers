@@ -3,7 +3,6 @@ import {
   PageHero,
   Section,
   SectionHeader,
-  ContactForm,
   CTASection,
 } from "@/components";
 import { type Locale, getPageContent, getRoute, company } from "@/content/site";
@@ -22,8 +21,8 @@ import {
   Clock,
   MapPin,
   Users,
-  MessageCircle,
 } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import { type ReactNode } from "react";
 
 interface ServicePageProps {
@@ -174,9 +173,9 @@ export function ServicePage({
       ? "Im Detail"
       : "In detail";
 
-  const formHref = meta?.formAnchor
-    ? "#kontakt-formular"
-    : getRoute("kontakt", locale);
+  const emailHref = `mailto:${company.email}`;
+
+  const formHref = meta?.formAnchor ? emailHref : getRoute("kontakt", locale);
 
   return (
     <PageLayout locale={locale} currentPath={currentPath}>
@@ -251,7 +250,7 @@ export function ServicePage({
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 border border-white/20 text-white/80 font-medium rounded-xl hover:bg-white/10 transition-colors text-sm"
               >
-                <MessageCircle className="w-4 h-4" />
+                <WhatsAppIcon className="w-4 h-4" />
                 WhatsApp
               </a>
             </div>
@@ -262,75 +261,36 @@ export function ServicePage({
       {/* ── 5. CONTACT FORM or CTA ──────────────────────────────────── */}
       {page.hasForm ? (
         <Section id="kontakt-formular" bgAlt>
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <SectionHeader
               tag={locale === "de" ? "Kontakt" : "Contact"}
               title={locale === "de" ? "Jetzt anfragen" : "Get in touch"}
               subtitle={
                 locale === "de"
-                  ? "Schildern Sie uns Ihr Vorhaben — wir melden uns kurzfristig bei Ihnen."
-                  : "Tell us about your project — we'll get back to you promptly."
+                  ? "Schreiben Sie uns direkt per E-Mail und wir melden uns kurzfristig bei Ihnen."
+                  : "Send us an email directly and we'll get back to you promptly."
               }
               centered={false}
             />
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
-              {/* Sidebar trust points */}
-              <div className="lg:col-span-2 space-y-5">
-                {[
-                  {
-                    icon: <Clock className="w-5 h-5 text-brand" />,
-                    title: locale === "de" ? "Schnelle Antwort" : "Quick reply",
-                    body:
-                      locale === "de"
-                        ? "Wir melden uns in der Regel innert 24 Stunden."
-                        : "We usually reply within 24 hours.",
-                  },
-                  {
-                    icon: <ShieldCheck className="w-5 h-5 text-brand" />,
-                    title:
-                      locale === "de"
-                        ? "Unverbindliches Angebot"
-                        : "No-obligation quote",
-                    body:
-                      locale === "de"
-                        ? "Kostenlose Offerte ganz ohne Verpflichtung."
-                        : "Free quote with no commitment.",
-                  },
-                  {
-                    icon: <Phone className="w-5 h-5 text-brand" />,
-                    title:
-                      locale === "de" ? "Direkt anrufen" : "Call us directly",
-                    body: (
-                      <a
-                        href={`tel:${company.phones[0].replace(/\s/g, "")}`}
-                        className="text-brand hover:underline font-medium"
-                      >
-                        {company.phones[0]}
-                      </a>
-                    ),
-                  },
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center shrink-0 mt-0.5">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-foreground">
-                        {item.title}
-                      </p>
-                      <p className="text-sm text-text-secondary mt-0.5">
-                        {item.body as ReactNode}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Form */}
-              <div className="lg:col-span-3">
-                <div className="p-6 sm:p-8 rounded-2xl bg-bg-card border border-border">
-                  <ContactForm locale={locale} pageSource={pageKey} />
+            <div className="p-6 sm:p-8 rounded-2xl bg-bg-card border border-border">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+                <div>
+                  <p className="text-sm font-semibold text-foreground">
+                    {locale === "de"
+                      ? "E-Mail an unser Team"
+                      : "Email our team"}
+                  </p>
+                  <p className="text-sm text-text-secondary mt-1">
+                    {company.email}
+                  </p>
                 </div>
+                <a
+                  href={emailHref}
+                  className="inline-flex items-center justify-center gap-2.5 px-5 py-3 bg-brand text-white font-medium rounded-xl hover:bg-brand-light transition-colors text-sm shadow-sm"
+                >
+                  {locale === "de" ? "E-Mail schreiben" : "Send email"}
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>

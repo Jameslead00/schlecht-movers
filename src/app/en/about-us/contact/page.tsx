@@ -1,7 +1,7 @@
-import { PageLayout, PageHero, Section, ContactForm } from "@/components";
-import { pagesEn, getUi, company } from "@/content/site";
-import Link from "next/link";
-import { FileDown, Phone, Mail, Instagram, MessageCircle } from "lucide-react";
+import { PageLayout, PageHero, Section } from "@/components";
+import { pagesEn, company } from "@/content/site";
+import { Phone, Mail, Instagram } from "lucide-react";
+import { WhatsAppIcon } from "@/components";
 
 export const metadata = { title: "Contact" };
 
@@ -13,7 +13,7 @@ const quickLinks = [
     href: "tel:+41617111115",
   },
   {
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
     label: "WhatsApp",
     value: "+41 79 197 89 92",
     href: "https://wa.me/+41791978992",
@@ -36,7 +36,6 @@ const quickLinks = [
 
 export default function ContactEnPage() {
   const page = pagesEn.kontakt;
-  const t = getUi("en");
 
   return (
     <PageLayout locale="en" currentPath="/en/about-us/contact">
@@ -62,21 +61,24 @@ export default function ContactEnPage() {
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-foreground">
-              {t.sendMessage}
-            </h2>
-            <Link
-              href={company.agbUrl}
-              target="_blank"
-              className="inline-flex items-center gap-2 px-4 py-2.5 border border-border rounded-xl text-sm font-medium text-foreground hover:bg-bg-alt transition-colors"
-            >
-              <FileDown className="w-4 h-4 text-brand" />
-              {t.agbDownload}
-            </Link>
-          </div>
+          <h2 className="text-2xl font-bold text-foreground mb-8">Email</h2>
           <div className="p-6 sm:p-8 rounded-2xl bg-bg-card border border-border">
-            <ContactForm locale="en" pageSource="kontakt" />
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+              <div>
+                <p className="text-sm font-semibold text-foreground">
+                  Reach us directly by email
+                </p>
+                <p className="text-sm text-text-secondary mt-1">
+                  {company.email}
+                </p>
+              </div>
+              <a
+                href={`mailto:${company.email}`}
+                className="inline-flex items-center justify-center px-5 py-3 bg-brand text-white font-medium rounded-xl hover:bg-brand-light transition-colors text-sm shadow-sm"
+              >
+                Send email
+              </a>
+            </div>
           </div>
         </div>
       </Section>

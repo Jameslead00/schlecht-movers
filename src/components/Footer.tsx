@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Instagram, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import {
   company,
   getRoute,
@@ -67,7 +68,14 @@ export function Footer({ locale }: FooterProps) {
                 className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-brand/20 hover:border-brand/30 transition-all duration-300"
                 aria-label="WhatsApp"
               >
-                <MessageCircle className="w-4 h-4 text-white/60" />
+                <WhatsAppIcon className="w-4 h-4 text-white/60" />
+              </a>
+              <a
+                href={`mailto:${company.email}`}
+                className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-brand/20 hover:border-brand/30 transition-all duration-300"
+                aria-label="Email"
+              >
+                <Mail className="w-4 h-4 text-white/60" />
               </a>
             </div>
           </div>

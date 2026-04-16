@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import { motion } from "framer-motion";
 import { company, type Locale, getRoute, getUi } from "@/content/site";
 
@@ -88,7 +89,7 @@ export function CTASection({ locale }: CTASectionProps) {
               className="flex items-center gap-4 p-5 rounded-2xl bg-white/[0.04] border border-white/[0.06] hover:bg-white/[0.08] hover:border-white/[0.1] transition-all duration-300 group"
             >
               <div className="w-11 h-11 rounded-xl bg-brand/20 flex items-center justify-center shrink-0 group-hover:bg-brand/30 transition-colors">
-                <MessageCircle className="w-5 h-5 text-brand-muted" />
+                <WhatsAppIcon className="w-5 h-5 text-brand-muted" />
               </div>
               <div>
                 <span className="text-xs text-white/40 uppercase tracking-wider font-medium">

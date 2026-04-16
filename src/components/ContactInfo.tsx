@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import { company, openingHours, type Locale, getUi } from "@/content/site";
 
 interface ContactInfoProps {
@@ -36,7 +37,7 @@ export function ContactInfo({ locale, showHours = false }: ContactInfoProps) {
       <div className="group">
         <div className="flex items-center gap-3 mb-3">
           <div className="w-9 h-9 rounded-xl bg-brand/10 flex items-center justify-center group-hover:bg-brand/15 transition-colors duration-300">
-            <MessageCircle className="w-4 h-4 text-brand" />
+            <WhatsAppIcon className="w-4 h-4 text-brand" />
           </div>
           <h3 className="font-semibold text-foreground">WhatsApp</h3>
         </div>
