@@ -17,7 +17,7 @@ export function Footer({ locale }: FooterProps) {
   const year = new Date().getFullYear();
 
   const serviceKeys = ["umzug", "firmenumzug", "transport", "raeumung", "usm"];
-  const aboutKeys = ["about", "team", "kontakt", "referenzen"];
+  const aboutKeys = ["about", "team", "fuhrpark", "kontakt", "referenzen"];
 
   return (
     <footer className="relative bg-accent text-white overflow-hidden">
@@ -167,6 +167,51 @@ export function Footer({ locale }: FooterProps) {
           >
             {t.agbDownload}
           </Link>
+        </div>
+        {/* JL Intelligence attribution, simple text with logo and link */}
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            fontSize: "0.98rem",
+            color: "#444",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "0.5rem",
+            fontWeight: 500,
+            padding: "0.5rem 0",
+            background: "rgba(255,255,255,0.06)",
+          }}
+        >
+          <span>Website provided by</span>
+          <a
+            href="https://jl-intelligence.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.4rem",
+              color: "#2F2219",
+              textDecoration: "none",
+              fontWeight: 600,
+            }}
+          >
+            <img
+              src="/logo_beige_transparent.png"
+              alt="Logo"
+              style={{
+                height: "min(7vw, 50px)",
+                width: "auto",
+                maxWidth: 80,
+                minWidth: 32,
+                objectFit: "contain",
+                verticalAlign: "middle",
+              }}
+            />
+            JL Intelligence
+          </a>
         </div>
       </div>
     </footer>

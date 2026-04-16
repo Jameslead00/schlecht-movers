@@ -38,7 +38,7 @@ export function CTASection({ locale }: CTASectionProps) {
               <span className="w-6 h-px bg-brand-muted" />
               {t.getInTouch}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-brand-muted tracking-tight mb-4 leading-tight">
               {locale === "de"
                 ? "Bereit für Ihren nächsten Schritt?"
                 : "Ready for your next move?"}

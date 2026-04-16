@@ -225,30 +225,51 @@ function DesktopNavItem({
   }
 
   return (
-    <div ref={ref} className="relative">
-      <button
-        onClick={() => setOpen(!open)}
-        onMouseEnter={() => setOpen(true)}
-        className={clsx(
-          "flex items-center gap-1 px-3.5 py-2 text-sm font-medium rounded-lg transition-all duration-300",
-          isActive
-            ? scrolled
-              ? "text-brand bg-brand-subtle"
-              : "text-white bg-white/10"
-            : scrolled
-              ? "text-text-secondary hover:text-brand hover:bg-bg-alt"
-              : "text-white/70 hover:text-white hover:bg-white/5",
-        )}
-        aria-expanded={open}
-      >
-        {label}
-        <ChevronDown
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <div className="flex items-center">
+        <Link
+          href={href}
           className={clsx(
-            "w-3.5 h-3.5 transition-transform",
-            open && "rotate-180",
+            "px-3.5 py-2 text-sm font-medium rounded-l-lg transition-all duration-300",
+            isActive
+              ? scrolled
+                ? "text-brand bg-brand-subtle"
+                : "text-white bg-white/10"
+              : scrolled
+                ? "text-text-secondary hover:text-brand hover:bg-bg-alt"
+                : "text-white/70 hover:text-white hover:bg-white/5",
           )}
-        />
-      </button>
+        >
+          {label}
+        </Link>
+        <button
+          onClick={() => setOpen(!open)}
+          className={clsx(
+            "px-1 py-2 text-sm font-medium rounded-r-lg transition-all duration-300",
+            isActive
+              ? scrolled
+                ? "text-brand bg-brand-subtle"
+                : "text-white bg-white/10"
+              : scrolled
+                ? "text-text-secondary hover:text-brand hover:bg-bg-alt"
+                : "text-white/70 hover:text-white hover:bg-white/5",
+          )}
+          aria-expanded={open}
+          aria-label={`${label} submenu`}
+        >
+          <ChevronDown
+            className={clsx(
+              "w-3.5 h-3.5 transition-transform",
+              open && "rotate-180",
+            )}
+          />
+        </button>
+      </div>
       <AnimatePresence>
         {open && (
           <motion.div
@@ -256,16 +277,8 @@ function DesktopNavItem({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.15 }}
-            onMouseLeave={() => setOpen(false)}
             className="absolute top-full left-0 mt-1 w-52 bg-white rounded-xl shadow-lg border border-border py-1.5 z-50"
           >
-            <Link
-              href={href}
-              className="block px-4 py-2 text-sm text-text-secondary hover:text-brand hover:bg-bg-alt transition-colors"
-            >
-              {label}
-            </Link>
-            <div className="h-px bg-border mx-3 my-1" />
             {item.children.map((child) => {
               const childHref = getRoute(child.key, locale);
               const childLabel = getRouteLabel(child.key, locale);

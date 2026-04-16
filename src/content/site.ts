@@ -38,6 +38,7 @@ export const routes: Record<string, RouteEntry> = {
   usm: { de: "/de/usm-haller", en: "/en/usm-haller", labelDe: "USM-Haller", labelEn: "USM-Haller" },
   about: { de: "/de/ueber-uns", en: "/en/about-us", labelDe: "Über uns", labelEn: "About Us" },
   team: { de: "/de/ueber-uns/unser-team", en: "/en/about-us/our-team", labelDe: "Unser Team", labelEn: "Our Team" },
+  fuhrpark: { de: "/de/ueber-uns/fuhrpark", en: "/en/about-us/fleet", labelDe: "Fuhrpark", labelEn: "Our Fleet" },
   kontakt: { de: "/de/ueber-uns/kontakt", en: "/en/about-us/contact", labelDe: "Kontakt", labelEn: "Contact" },
   referenzen: { de: "/de/ueber-uns/referenzen", en: "/en/about-us/references", labelDe: "Referenzen", labelEn: "References" },
 };
@@ -64,7 +65,7 @@ export const navigation: NavItem[] = [
   { key: "usm" },
   {
     key: "about",
-    children: [{ key: "team" }, { key: "kontakt" }, { key: "referenzen" }],
+    children: [{ key: "team" }, { key: "fuhrpark" }, { key: "kontakt" }, { key: "referenzen" }],
   },
 ];
 
@@ -179,9 +180,11 @@ export const pagesDe: Pages = {
         body: "Manche Gegenstände erfordern besondere Aufmerksamkeit, sei es aufgrund ihres Wertes, ihrer Empfindlichkeit oder ihrer Einzigartigkeit. Wir sind Ihr verlässlicher Partner für Spezialtransporte von Kunstwerken, Gemälden, Designmöbeln, USM-Systemen und empfindlichen Objekten aller Art. Mit unserer Erfahrung und dem richtigen Equipment gewährleisten wir, dass jedes Stück fachgerecht verpackt, sicher transportiert und sorgfältig platziert wird. Unsere geschulten Mitarbeitenden wissen genau, worauf es beim Umgang mit sensiblen Objekten ankommt, von der Vorbereitung über den Transport bis hin zur Montage vor Ort.",
       },
     ],
+    hasForm: true,
   },
   firmenumzug: {
     title: "Firmenumzug",
+    subtitle: "Strukturiert geplant, effizient umgesetzt",
     sections: [
       {
         heading: "Besichtigung",
@@ -204,6 +207,7 @@ export const pagesDe: Pages = {
   },
   raeumung: {
     title: "Räumung und Entsorgung",
+    subtitle: "Diskret, gründlich und umweltgerecht",
     sections: [
       {
         body: "Wir übernehmen die Räumung und Entrümpelung von Wohnungen, Häusern, Kellern, Estrichen, Garagen, Lagerräumen und Gewerbeobjekten und sorgen für eine fach- und umweltgerechte Entsorgung aller nicht mehr benötigten Gegenstände. Dabei trennen wir Wertstoffe für Recycling, spenden gut erhaltene Möbel auf Wunsch an gemeinnützige Organisationen oder entsorgen Sperrmüll und Abfall nach den aktuellen gesetzlichen Vorgaben. Unsere erfahrenen Teams arbeiten effizient und respektvoll – besonders in sensiblen Situationen wie Nachlässen oder kurzfristigen Räumungsaufträgen stehen Sie als Kunde im Mittelpunkt.",
@@ -338,9 +342,11 @@ export const pagesEn: Pages = {
         body: "Some items require special attention, whether due to their value, their sensitivity or their uniqueness. We are your reliable partner for specialised transport services involving artworks, paintings, designer furniture, USM systems and delicate objects of all kinds. With our experience and the appropriate equipment, we ensure that every item is professionally packed, transported safely and carefully positioned. Our trained staff know exactly what matters when handling sensitive objects, from preparation and transport through to on-site installation.",
       },
     ],
+    hasForm: true,
   },
   firmenumzug: {
     title: "Corporate Relocation",
+    subtitle: "Structured planning, efficient execution",
     sections: [
       {
         heading: "Inspection",
@@ -363,6 +369,7 @@ export const pagesEn: Pages = {
   },
   raeumung: {
     title: "Clearance and Disposal",
+    subtitle: "Discreet, thorough and environmentally responsible",
     sections: [
       {
         body: "We handle the clearance and removal of apartments, houses, basements, attics, garages, storage areas and commercial properties, and ensure the professional and environmentally responsible disposal of all items that are no longer required. In the process, we separate recyclable materials, donate well-preserved furniture to charitable organisations upon request, or dispose of bulky waste and refuse in accordance with current legal regulations. Our experienced teams work efficiently and respectfully. Especially in sensitive situations such as estate clearances or short-notice assignments, you as the client remain our top priority.",

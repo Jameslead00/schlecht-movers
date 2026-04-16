@@ -72,7 +72,7 @@ export function StatsBar({ locale }: { locale: Locale }) {
               <div className="text-3xl sm:text-4xl font-bold text-brand tracking-tight">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="mt-1 text-xs sm:text-sm text-text-muted font-medium uppercase tracking-wider">
+              <div className="mt-1 text-[11px] sm:text-sm text-text-muted font-medium leading-snug [overflow-wrap:anywhere] sm:uppercase sm:tracking-wider">
                 {stat.label}
               </div>
             </div>

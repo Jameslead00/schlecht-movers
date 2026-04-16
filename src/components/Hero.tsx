@@ -15,6 +15,9 @@ interface HeroProps {
   secondaryCta?: { href: string; label: string };
 }
 
+const HERO_BG_GRADIENT =
+  "linear-gradient(to bottom, var(--color-accent) 0%, var(--color-accent) 85%, #2d2d30 86%, var(--color-bg-alt) 100%)";
+
 export function Hero({
   title,
   subtitle,
@@ -27,7 +30,12 @@ export function Hero({
   const t = getUi(locale);
 
   return (
-    <section className="relative overflow-hidden bg-accent min-h-[70vh] sm:min-h-[80vh] flex items-center">
+    <section
+      className="relative overflow-hidden min-h-[70vh] sm:min-h-[80vh] flex items-center"
+      style={{
+        backgroundImage: HERO_BG_GRADIENT,
+      }}
+    >
       {/* Decorative gold accent shapes */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand/8 blur-3xl" />
@@ -120,9 +128,6 @@ export function Hero({
           </motion.div>
         </div>
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }
@@ -130,12 +135,21 @@ export function Hero({
 export function PageHero({
   title,
   subtitle,
+  ctaHref,
+  ctaLabel,
 }: {
   title: string;
   subtitle?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-accent pt-32 sm:pt-36 pb-20 sm:pb-24">
+    <section
+      className="relative overflow-hidden pt-32 sm:pt-36 pb-20 sm:pb-24"
+      style={{
+        backgroundImage: HERO_BG_GRADIENT,
+      }}
+    >
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
         <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-brand/8 blur-3xl" />
@@ -171,10 +185,20 @@ export function PageHero({
           {subtitle && (
             <p className="mt-4 text-lg text-white/60 max-w-2xl">{subtitle}</p>
           )}
+
+          {ctaHref && ctaLabel && (
+            <div className="mt-8">
+              <Link
+                href={ctaHref}
+                className="inline-flex items-center gap-2.5 px-6 py-3 bg-brand text-white font-semibold rounded-xl hover:bg-brand-light transition-all duration-300 group shadow-lg shadow-brand/20 text-sm"
+              >
+                {ctaLabel}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </div>
+          )}
         </motion.div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }
