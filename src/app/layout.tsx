@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     default: "Schlecht Movers – Ihr kompetenter Umzugspartner",
     template: "%s | Schlecht Movers",
   },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    shortcut: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   description:
     "Schlecht und Co. GmbH – Professionelle Umzüge, Firmenumzüge, Räumungen, Entsorgungen und USM-Haller Montagen in Reinach, Basel-Landschaft und der ganzen Schweiz.",
   keywords: [
